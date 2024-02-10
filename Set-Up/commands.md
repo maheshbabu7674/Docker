@@ -114,3 +114,92 @@ Here is a list of some commonly used Docker commands along with examples:
      ```
 
 These are just a few examples, and Docker has many more commands and options. You can explore additional commands and options using `docker --help` or refer to the official Docker documentation: [Docker Command-Line Interface (CLI)](https://docs.docker.com/engine/reference/commandline/cli/).
+
+
+Here is a list of basic Docker commands related to networks and volumes:
+
+### Docker Network Commands:
+
+1. **List Networks:**
+   ```bash
+   docker network ls
+   ```
+
+2. **Inspect a Network:**
+   ```bash
+   docker network inspect <network-name>
+   ```
+
+3. **Create a Network:**
+   ```bash
+   docker network create <network-name>
+   ```
+
+4. **Remove a Network:**
+   ```bash
+   docker network rm <network-name>
+   ```
+
+### Docker Volume Commands:
+
+1. **List Volumes:**
+   ```bash
+   docker volume ls
+   ```
+
+2. **Inspect a Volume:**
+   ```bash
+   docker volume inspect <volume-name>
+   ```
+
+3. **Create a Volume:**
+   ```bash
+   docker volume create <volume-name>
+   ```
+
+4. **Remove a Volume:**
+   ```bash
+   docker volume rm <volume-name>
+   ```
+
+### Docker Container Commands with Networks and Volumes:
+
+1. **Run a Container with a Specific Network:**
+   ```bash
+   docker run --network <network-name> <image>
+   ```
+
+2. **Run a Container with a Specific Volume:**
+   ```bash
+   docker run -v <volume-name>:<container-path> <image>
+   ```
+
+3. **Run a Container with Multiple Volumes:**
+   ```bash
+   docker run -v <volume1-name>:<container-path1> -v <volume2-name>:<container-path2> <image>
+   ```
+
+4. **Run a Container with a Named Volume:**
+   ```bash
+   docker run -v <volume-name>:/path/in/container <image>
+   ```
+
+5. **Run a Container with a Specific IP Address (on a user-defined bridge network):**
+   ```bash
+   docker run --network <network-name> --ip <ip-address> <image>
+   ```
+
+6. **Run a Container and Mount a Host Directory as a Volume:**
+   ```bash
+   docker run -v /host/path:/container/path <image>
+   ```
+
+7. **Run a Container with Read-Only Volumes:**
+   ```bash
+   docker run -v <volume-name>:/path/in/container:ro <image>
+   ```
+
+These are some basic Docker commands for working with networks and volumes. For more detailed information and options, refer to the official Docker documentation:
+
+- [Docker Network Documentation](https://docs.docker.com/network/)
+- [Docker Volume Documentation](https://docs.docker.com/storage/volumes/)
